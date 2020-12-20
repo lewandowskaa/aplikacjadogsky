@@ -1,5 +1,4 @@
 package com.example.demo.model;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +7,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@AllArgsConstructor                                                                             //Generuje konstruktor dla klasy, który przyjmuje jako argumenty wszystkie pola
+@NoArgsConstructor                                                                                  //Generuje konstruktor dla klasy, który nie przyjmuje argumentów
+@Data                                                                                           //generuje settery, gettery, oraz metody z klasy Object(@Getter, @Setter, @HashCodeAndEquals, @RequiredArgsConstructor oraz @ToString)
 @Entity
 public class Visit {
-
-    // Klasa model / szablon wizyty | pozwala nam na zapis wszelkich niezbednych informacji na temat wizyty
-
+    // Klasa model / szablon wizyty | pozwala nam na zapis
+    //wszelkich niezbednych informacji na temat wizyty
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -27,7 +24,7 @@ public class Visit {
     private double totalCost;
     private LocalTime totalTime;
 
-    @ManyToOne(fetch = FetchType.LAZY) //Lazy -pobierz dopiero kiedy będzie pierwsze odwołanie do tego obiektu
+    @ManyToOne(fetch = FetchType.LAZY)                                                      //Lazy -pobierz dopiero kiedy będzie pierwsze odwołanie do tego obiektu
     private User user;
 
     @ManyToMany(fetch = FetchType.LAZY)

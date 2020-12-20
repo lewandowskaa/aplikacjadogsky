@@ -10,7 +10,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 
 //Spring security klasa odpowiedzialana za konfiguracje procesów autoryzacji użytkownika.
-// wykorzystuje specjalnie zdefiniowany filter w którym ściśle określamy warunki logowania "CustomFilter"
+// wykorzystuje specjalnie zdefiniowany filter,w którym ściśle określamy warunki logowania "CustomFilter"
 
 @Configuration
 @EnableWebSecurity

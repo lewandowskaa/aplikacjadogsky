@@ -17,8 +17,8 @@ import java.util.List;
 @Service
 public class VisitServices {
 
-    // servis dla wizyty | tu jest glowne serce biznesowe aplikacji | znajduja sie tu metody umozliwiajace poprawne rezerwowanie wizyty i dodawanie koleinych ich pozycji
-    // a take szukanie wlasciwej dla uzytkownika wizyty w przygotowaniu ( koszyka )
+    // servis dla wizyty | tu jest glowne serce biznesowe aplikacji | znajduja sie tu metody umozliwiajace poprawne rezerwowanie wizyty i dodawanie kolejnych ich pozycji
+    // a takze szukanie wlasciwej dla uzytkownika wizyty w przygotowaniu ( koszyka )
 
     @Autowired
     private VisitRepository visitRepository;
@@ -93,7 +93,7 @@ public class VisitServices {
         }
     }
 
-    // rejestracja wizyty ( jej proba ) jesli termin wizyty wskazany przez zytkownika nie koliduje z inna nowa wizyta zostanie dodana do bazy danych |
+    // rejestracja wizyty ( jej proba ) jesli termin wizyty wskazany przez uzytkownika nie koliduje z inna nowa wizyta zostanie dodana do bazy danych |
     //     jesli termin bedzie juz zajety uzytkownikowi zostanie zaproponowany inny termin o tej samej godzinie
     public LocalDate visitRegistration(Integer visitId, String date, String time) {
         LocalDate visitDate = LocalDate.parse(date);
@@ -129,7 +129,7 @@ public class VisitServices {
     }
 
     // metoda sprawdzajaca czy podana wizyta moze sie odbyc danego dnia ( porownywanie z innymi wizytami )
-    // jesli nie ma kolizji w danym dniu dostajemy infomracje ze mozemy rejestrowac na dany termin
+    // jesli nie ma kolizji w danym dniu dostajemy informacje ze mozemy rejestrowac na dany termin
     public boolean visitAvailable(Visit newVisit, List<Visit> oldVisit, LocalTime newStart) {
         LocalTime start = LocalTime.parse("10:00");
 

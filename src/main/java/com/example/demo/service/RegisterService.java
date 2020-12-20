@@ -36,19 +36,19 @@ public class RegisterService {
 
     public ModelAndView registerResponse(String firstName, String lastName, String email, String password1, String password2, Model model) {
         if (emailExist(email)) {
-            model.addAttribute("message", "Email już istnieje");
+            model.addAttribute("message", "Email już istnieje.");
             model.addAttribute("messageType", "danger");
             return new ModelAndView("register");
         }
 
         if (isPasswordsAreDifferent(password1, password2)) {
-            model.addAttribute("message", "Hasła są różne");
+            model.addAttribute("message", "Hasła są różne.");
             model.addAttribute("messageType", "danger");
             return new ModelAndView("register");
         }
 
         if (registerNewUser(firstName, lastName, email, password1, password2)) {
-            model.addAttribute("message", "Konto zarejestrowane");
+            model.addAttribute("message", "Konto zarejestrowane.");
             model.addAttribute("messageType", "success");
         } else {
             model.addAttribute("message", "Błąd");

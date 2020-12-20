@@ -25,7 +25,7 @@ public class CustomFilter implements Filter {
         String requestUri = req.getRequestURI();
 
         if (requestUri.endsWith("/")) {
-            resp.sendRedirect(resp.encodeRedirectURL("login"));
+            resp.sendRedirect(resp.encodeRedirectURL("home"));
         } else if (
                 session != null ||
                         requestUri.endsWith(".css") ||

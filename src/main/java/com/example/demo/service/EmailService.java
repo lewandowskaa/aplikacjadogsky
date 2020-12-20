@@ -14,8 +14,8 @@ public class EmailService {
     // odbiera informacje z kontrolera na temat wiadomosci ktore uzytkownik chce wyslac po czym przekazyje je dalej na adres dog-sky@wp.pl
 
 
-    private final String USERNAME = "dogskypage@gmail.com";
-    private final String PASSWORD = "dogSky2020";
+    private final String USERNAME = "dogskypage@gmail.com";//nie da się zmienić, bo final ostateczna wersja
+    private final String PASSWORD = "dogSky2020";////nie da się zmienić, bo final ostateczna wersja
 
     public void sendEmail(String firstName, String email, String phone, String context) {
 
